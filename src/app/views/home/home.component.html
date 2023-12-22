@@ -1,0 +1,30 @@
+<form class="create-session-form" [formGroup]="createSessionForm" (ngSubmit)="onSubmit()">
+    <h2>Create new session</h2>
+
+    <mat-form-field hintLabel="Max 30 characters">
+        <mat-label for="sessionName">Enter session name</mat-label>
+        <input matInput type="text" id="sessionName" placeholder="Ex. sprint Janvier 2024" formControlName="sessionName" required maxlength="30" minlength="3">
+        @if (sessionName?.errors?.['required']) {
+            <mat-error>field required</mat-error>
+        } @else if (sessionName?.errors?.['minlength']) {
+            <mat-error>name must be at least 3 characters long</mat-error>
+        } @else if (sessionName?.errors?.['maxlength']) {
+            <mat-error>name must be at most 30 characters long</mat-error>
+        }
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Pick a vote system</mat-label>
+        <mat-select for="votingSystem" id="votingSystem" formControlName="votingSystem">
+            <mat-option value="option">Option</mat-option>
+        </mat-select>
+        @if (votingSystem?.errors?.['required']) {
+            <mat-error>Picking a vote system is required</mat-error>
+        }
+    </mat-form-field>
+
+    <mat-card-actions class="btn-container">
+        <button mat-raised-button type="submit">Create new session</button>
+    </mat-card-actions>
+</form>
+
