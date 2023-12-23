@@ -1,4 +1,6 @@
 export interface SessionModel {
     id: string;
-    name: string;
+    name: string
+    playersRefs: string[];
+    leaderId: string;
 }

@@ -5,5 +5,5 @@ import {SessionComponent} from "./views/session/session.component";
 export const routes: Routes = [
     {path: "", pathMatch: "full", redirectTo: "home"},
     {component: HomeComponent, path: "home"},
-    {component: SessionComponent, path: "session"},
+    {component: SessionComponent, path: "session/:id"},
 ];

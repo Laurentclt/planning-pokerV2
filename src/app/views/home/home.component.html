@@ -16,7 +16,9 @@
     <mat-form-field>
         <mat-label>Pick a vote system</mat-label>
         <mat-select for="votingSystem" id="votingSystem" formControlName="votingSystem">
-            <mat-option value="option">Option</mat-option>
+            @for (voteSystem of voteSystems; track voteSystem.id ) {
+                <mat-option [value]="voteSystem">{{ voteSystem.getTitle()}}</mat-option>
+            }
         </mat-select>
         @if (votingSystem?.errors?.['required']) {
             <mat-error>Picking a vote system is required</mat-error>

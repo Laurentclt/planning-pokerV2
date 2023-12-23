@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "planning-poker-930be": {
+      "hosting": {
+        "client": [
+          "planning-poker-930be"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "planning-poker-930be"
+  }
+}
